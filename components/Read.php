@@ -5,11 +5,10 @@ Class Read extends Connect {
     private $index;
 
     public function __construct(String $item, String $column, String $index) {
-        $this->executeConnect();
+        $this->executeConnection();
         $this->item = $item;
         $this->column = $column;
         $this->index = $index;
-        $this->executeRead();
     }
 
     public function executeRead() {
