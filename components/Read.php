@@ -1,23 +1,23 @@
 <?php
 Class Read extends Connect {
-    private $tableItem;
-    private $tableColumn;
-    private $rowIndex;
+    private $item;
+    private $column;
+    private $index;
 
-    public function __construct(String $tableItem, String $tableColumn, String $rowIndex) {
+    public function __construct(String $item, String $column, String $index) {
         $this->executeConnect();
-        $this->tableItem = $tableItem;
-        $this->tableColumn = $tableColumn;
-        $this->rowIndex = $rowIndex;
+        $this->item = $item;
+        $this->column = $column;
+        $this->index = $index;
         $this->executeRead();
     }
 
     public function executeRead() {
-        $query = "SELECT $this->tableItem FROM $this->tableColumn";
+        $query = "SELECT $this->item FROM $this->column";
         $result = $this->connection->query($query);
         $outputArray = array();
         while ($row = $result->fetch_assoc()) {
-            array_push($outputArray, $row[$this->rowIndex]);
+            array_push($outputArray, $row[$this->index]);
         }
         return $outputArray;
     }
