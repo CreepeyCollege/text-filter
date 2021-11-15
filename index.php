@@ -4,7 +4,7 @@ include_once './config/includes.php';
 $read = new Read('*', 'filter', 'word');
 $filterSet = $read->executeRead();
 
-$text = "Word, Fuck, Test, Shit, Fuck";
+$text = "Fuck, Shit! Test B!tch";
 $text = str_replace(",", " ,", $text);
 
 $explodeValue = explode(" ", $text);
