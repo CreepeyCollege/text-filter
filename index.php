@@ -9,9 +9,9 @@ $text = str_replace(",", " ,", $text);
 
 $explodeValue = explode(" ", $text);
 
-foreach ($explodeValue as $getal => $word) {
+foreach ($explodeValue as $curse => $word) {
     if (in_array(strtolower($word), $filterSet)) {
-        $explodeValue[$getal] = '***';
+        $explodeValue[$curse] = '***';
     }
 }
 $implodeValue = implode(" ", $explodeValue);
