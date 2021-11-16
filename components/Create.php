@@ -12,7 +12,7 @@ Class Create extends Connect {
     }
 
     public function executeCreate() {
-        $query = "INSERT INTO $this->table (id, $this->column) VALUES (NULL, '" . $this->value . "')";
+        $query = "INSERT INTO {$this->table} (id, {$this->column}) VALUES (NULL, '{$this->value}')";
         $result = $this->connection->query($query);
         return $result;
     }

@@ -12,7 +12,7 @@ Class Read extends Connect {
     }
 
     public function executeRead() {
-        $query = "SELECT $this->item FROM $this->column";
+        $query = "SELECT {$this->item} FROM {$this->column}";
         $result = $this->connection->query($query);
         $outputArray = array();
         while ($row = $result->fetch_assoc()) {
