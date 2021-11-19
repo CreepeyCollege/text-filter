@@ -1,2 +1,2 @@
 <?php
-include_once './config/includes.php';
+require_once './config/includes.php';
